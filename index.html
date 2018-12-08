@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>个人简历</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_945882_89m7d502zc.js">
   </script>
   <style type="text/css">
@@ -18,6 +19,9 @@
 </style>
 </head>
 <body>
+  <div id="siteWelcome" class="site-welcome active">
+    <div class="loading"></div>
+  </div>
   <div class="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a href="#" class="logo" alt="logo" style="float: left;">
@@ -192,5 +196,8 @@
     </div>
 
   </section>
+  <script>
+    // siteWelcome.classList.remove('active')
+  </script>
 </body>
 </html>

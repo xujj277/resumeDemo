@@ -188,8 +188,7 @@ main .downloadResume:hover {
 
 .selfIntroduction {
   max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: center;
   font-family: kai;
   font-size: 18px;
