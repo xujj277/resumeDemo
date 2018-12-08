@@ -28,12 +28,21 @@ h1,h2,h3,h4 {
   top: 0;
   left: 0;
   width: 100%;
+  transition: all 0.5s;
+  color: #B7B7B7;
+}
+.topNavBar.sticky {
+  background: #fff;
+  padding: 10px 0;
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: #3d4451;
 }
 .topNavBar-inner {
-  padding: 0px 16px 0px 16px;
+  padding: 0px 16px;
 }
 .topNavBar nav {
-  padding-top: 7px;
+  padding-top: 5px;
 }
 .topNavBar nav > ul {
   list-style: none;
@@ -46,7 +55,7 @@ h1,h2,h3,h4 {
   margin: 0 17px 0 17px;
 }
 .topNavBar nav > ul > li > a {
-  color: #B7B7B7;
+  color: inherit;
   font-size: 12px;
   font-weight: bold;
   border-bottom: 3px solid transparent;
