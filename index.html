@@ -213,31 +213,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
   <script>
     siteWelcome.classList.remove('active')
+    let specialTags = document.querySelectorAll('[data-x]')
+    for (let i=0; i<specialTags.length; i++) {
+      specialTags[i].classList.add('offset')
+    }
+    findClosest()
     window.onscroll = function (xxx) {
       if (window.scrollY > 0) {
         topBar.classList.add('sticky')
       } else {
         topBar.classList.remove('sticky')
       }
+      findClosest()
+    }
+    function findClosest () {
       let specialTags = document.querySelectorAll('[data-x]')
       let minIndex = 0
       for (let i=0; i<specialTags.length; i++) {
         if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
           minIndex = i
         }
-        specialTags[i].classList.remove('active')
       }
-      specialTags[minIndex].classList.add('active')
+      specialTags[minIndex].classList.remove('offset')
       let id = specialTags[minIndex].id
-      
       let a = document.querySelector('a[href="#' + id + '"]')
       let li = a.parentNode
       let allChildren = li.parentNode.children
       for (let i=0; i<allChildren.length; i++) {
-        allChildren[i].classList.remove('active')
+        allChildren[i].classList.remove('hightLight')
       }
-      li.classList.add('active')
-    }
+      li.classList.add('hightLight')
+    } 
+
     let liTags = document.querySelectorAll('nav > ul li')
     for(let i=0; i<liTags.length; i++) {
       liTags[i].onmouseenter = function (x) {
