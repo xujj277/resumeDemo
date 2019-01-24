@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>个人简历</title>
+  <link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.css">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_945882_89m7d502zc.js">
@@ -176,42 +177,45 @@
   </section>
   <section data-x class="portfolio" id="works">
     <h2>作品集</h2>
-    <nav>
-      <ol>
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class="bar state-1">
-        <div class="bar-inner"></div>
+
+    <!--变成轮播-->
+    <!-- Slider main container -->
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <img src="./img/works/nav-page.jpg" class="swiper-slide">
+        <img src="./img/works/canvas.jpg" class="swiper-slide">
+        <img src="./img/works/swiper.jpg" class="swiper-slide">
       </div>
-    </nav>
-    <script>
-      portfolio1.onclick = function () {
-        portfolioBar.className = 'bar state-1'
-      }
-      portfolio2.onclick = function () {
-        portfolioBar.className = 'bar state-2'
-      }
-      portfolio3.onclick = function () {
-        portfolioBar.className = 'bar state-3'
-      }
-    </script>
-    <div class="works" style="height: 597px;">
-      <div class="big" style="top: 0; left: 0;">
-        <img src="./img/UNADJUSTEDNONRAW_thumb_4c.jpg" alt="1" style="width: 627px">
-      </div>
-      <div class="small" style="top: 0; left: 645px">
-        <img src="./img/UNADJUSTEDNONRAW_thumb_4c.jpg" alt="2" style="width: 300px">
-      </div>
-      <div class="small" style="top: 262px; left: 645px">
-        <img src="./img/UNADJUSTEDNONRAW_thumb_4c.jpg" alt="3" style="width: 300px">
-      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
 
   </section>
+  <script src="./node_modules/swiper/dist/js/swiper.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
   <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    })
+    console.log(window.Swiper)
     siteWelcome.classList.remove('active')
     let specialTags = document.querySelectorAll('[data-x]')
     for (let i=0; i<specialTags.length; i++) {
@@ -243,7 +247,7 @@
         allChildren[i].classList.remove('hightLight')
       }
       li.classList.add('hightLight')
-    } 
+    }
 
     let liTags = document.querySelectorAll('nav > ul li')
     for(let i=0; i<liTags.length; i++) {
@@ -275,13 +279,13 @@
         let t = Math.abs((s/100)*200)
 
         var coords = { y: currentTop };
-        var tween = new TWEEN.Tween(coords) 
-        .to({ y: targetTop }, t) 
-        .easing(TWEEN.Easing.Quadratic.InOut) 
+        var tween = new TWEEN.Tween(coords)
+        .to({ y: targetTop }, t)
+        .easing(TWEEN.Easing.Quadratic.InOut)
         .onUpdate(function() {
           window.scrollTo(0, coords.y)
         })
-        .start(); 
+        .start();
       }
     }
   </script>
