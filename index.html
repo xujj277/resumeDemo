@@ -113,7 +113,7 @@
       </footer>
     </div>
     <p class="downloadResume-wrapper" style="text-align: center;">
-      <a class="downloadResume" href="./徐金俊+web前端开发+13530136809+深圳大学的副本.pdf" download>下载 PDF 简历</a>
+      <a class="downloadResume" href="./徐金俊-web前端开发-13530136809-深圳大学.pdf" download>下载 PDF 简历</a>
     </p>
 
     <p class="selfIntroduction">
@@ -199,13 +199,27 @@
     </div>
 
   </section>
+  <section class="message">
+    <h2>留言</h2>
+    <ol id="messageList"></ol>
+    <form id="postMessageForm" style="width: 700px; margin: 50px auto;">
+      <label for="">姓名</label>
+      <input type="text" name="name">
+      <label for="">内容</label>
+      <input type="text" name="content">
+      <input type="submit" value="提交">
+    </form>
+  </section>
   <script src="./node_modules/swiper/dist/js/swiper.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+<!--  <script src="https://cdn.bootcdn.net/ajax/libs/tween.js/18.6.0/tween.amd.min.js"></script>-->
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script>
   <!--模块化-->
   <script src="./js/init-swiper.js"></script>
   <script src="./js/auto-slide.js"></script>
   <script src="./js/sticky-torbar.js"></script>
   <script src="./js/smoothly-navigation.js"></script>
+  <script src="js/message.js"></script>
   <script>
     siteWelcome.classList.remove('active')
 
